@@ -1,0 +1,63 @@
+function Riddle(){
+  var username = document.getElementById('un').value;
+  var t1 = document.getElementById("i1").value;
+  var t2 = document.getElementById("i2").value;
+  var t3 = document.getElementById("i3").value;
+  var t4 = document.getElementById("i4").value;
+  var t5 = document.getElementById("i5").value;
+  var t6 = document.getElementById("i6").value;
+  var t7 = document.getElementById("i7").value;
+  var t8 = document.getElementById("i8").value;
+  var t9 = document.getElementById("i9").value;
+  var t10 = document.getElementById("i10").value;
+  var t11 = document.getElementById("i11").value;
+  var t12 = document.getElementById("i12").value;
+  var t13 = document.getElementById("i13").value;
+  var t14 = document.getElementById("i14").value;
+
+	if(username != ""){
+  	 	var username = document.getElementById('un').value;
+  	 }
+
+  	 else{
+  	   username = document.getElementById('un').innerHTML = "You unknown hobbit";
+  	 }
+
+  var ltext = t1.charAt(0) + t2.charAt(0) + t3.charAt(0) + t4.charAt(0) + t5.charAt(0) + " " 
+  + t6.charAt(0) + t7.charAt(0) + t8.charAt(0) + t9.charAt(0) + t10.charAt(0) + t11.charAt(0) + t12.charAt(0) + t13.charAt(0) + t14.charAt(0);
+
+
+  if(t1.charAt(0) == "m" && t2.charAt(0) == "e" && t3.charAt(0) == "r" && t4.charAt(0) == "r" && t5.charAt(0) == "y" && t6.charAt(0) == "c" && t7.charAt(0) == "h" && t8.charAt(0) == "r" && t9.charAt(0) == "i" && t10.charAt(0) == "s" && t11.charAt(0) == "t" && t12.charAt(0) == "m" && t13.charAt(0) == "a" && t14.charAt(0) == "s"){
+
+  	 document.getElementById("demo").innerHTML = ltext.toUpperCase() + ", " + username + "!" + "<br>" + "From Mugurel";
+     document.getElementById("demo").style.backgroundColor = "black";
+     document.getElementById("body").style.backgroundColor = "#778899";
+     
+
+  	 var colors = ["lightblue", "yellow", "red", "green", "orange", "purple"]
+  	 var currentColor = 0;
+  	 var lis = document.querySelectorAll(".far")
+  	 function changeColor() {
+  	  --currentColor
+  	  if (currentColor < 0) currentColor = colors.length -1
+  	  for (var i = 0; i < lis.length; i++) {
+  	    lis[i].style.color = colors[(currentColor +i) % colors.length]
+  	  }
+  	 }
+  	 setInterval(changeColor, 1000)
+    }
+
+  else{
+  	 document.getElementById("demo").innerHTML = "Try again, naughty you!";
+     document.getElementById("demo").style.backgroundColor = "red";
+     document.getElementById("demo").style.color = "white";
+     document.getElementById("body").style.backgroundColor = "black";
+     document.getElementByClassName("far").style.visibility = "hidden";
+  }
+}
+
+
+
+
+
+

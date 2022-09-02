@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Riddle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" type="text/css" href="main.css">-->
+<!--main.css-->
+<style>
+#demo{
+  padding: 30px;
+  color: white;
+  opacity: 1;
+  margin-top: 10px;
+  font-size: 18px;
+  width: 85%;
+}
+
+body{
+   background-color: #333;
+}
+
+label{
+  color: lightgray;
+}
+
+h2{
+  color: lightgray;
+  margin: 15px;
+}
+
+h4{
+  color: orange;
+  margin: 15px;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text]{
+  width: 45%;
+  padding: 12px 20px;
+  margin: 2px 2px 2px 2px;
+  display: inline-block;
+  border-bottom: 1px solid darkorange;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-sizing: border-box;
+  float: left;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 13px;
+}
+
+#i7,#i8,#i9,#i10, #i11, #i12, #i13, #i14{
+  float: left;
+}
+
+#un{
+  width: 90.5%;
+  
+  color: lightgrey;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#riddle{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 2px 2px 2px;
+  border: none;
+  cursor: pointer;
+  width: 90.5%;
+  font-size: 20px;
+}
+
+
+/* Extra styles for the clickme button */
+.clickme {
+  width: 250px;
+  height: 100px;
+  padding: 10px 18px;
+  background-color: #f44336;
+  color: white;
+  
+  margin: 8px 0 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Center the image */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: green;
+  
+  
+  width: 100%; /* Could be more or less, depending on screen size */
+  height: 100%;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+#xmas{
+  font-size: 100px;
+  text-align: center;
+}
+
+#intro{
+  color: white;
+  padding:1%;
+  font-size: 25px;
+  margin-left: 25%;
+}
+
+#guide{
+  color: lightgray;
+  margin-left: 15px;
+}
+</style>
+</head>
+<body>
+
+<h2>Riddle your way through the snow</h2>
+<p id="guide">Write your username, guess the words, write them in and click Riddle</p>
+<div class="container">
+      <input type="text" name="w1" id="i1" placeholder=" &#9998;... Name the 3-rd month of the year" onblur="Verify()">
+      <input type="text" name="w2" id="i2" placeholder=" &#9998;...Name the planet you live on at the moment" onblur="Verify()">
+      <input type="text" name="w3" id="i3" placeholder="&#9998;...It's round and stays on your finger" onblur="Verify()">
+      <input type="text" name="w4" id="i4" placeholder="&#9998;...A junction that it has a round shape about it" onblur="Verify()">
+      <input type="text" name="w5" id="i5" placeholder="&#9998;...The color of the lemon" onblur="Verify()">
+      <input type="text" name="w6" id="i6" placeholder="&#9998;...Learn your a, b, ?s" onblur="Verify()">
+      <input type="text" name="w7" id="i7" placeholder="&#9998;...Keyword to answer the phone" onblur="Verify()">
+      <input type="text" name="w8" id="i8" placeholder="&#9998;...What's a game where you guess things?" onblur="Verify()">
+      <input type="text" name="w9" id="i9" placeholder="&#9998;...Forms during winter, you can skate on it" onblur="Verify()">
+      <input type="text" name="w10" id="i10" placeholder="&#9998;...It's blue and the Sun sits on it during the day" onblur="Verify()">
+      <input type="text" name="w11" id="i11" placeholder="&#9998;...It's not my cup of ***" onblur="Verify()">
+      <input type="text" name="w12" id="i12" placeholder="&#9998;...You often use it for orientation" onblur="Verify()">
+      <input type="text" name="w13" id="i13" placeholder="&#9998;...You should always have an *** up your sleeve" onblur="Verify()">
+      <input type="text" name="w14" id="i14" placeholder="&#9998;...It's yellow, massive, round and very hot" onblur="Verify()">
+      <input type="text" name="username" id="un" placeholder="&#9998;...Type in your username">
+      <button onclick="Riddle()" id="riddle">Riddle</button>
+      <p id="demo">
+  </div>
+
+<!--opening modal-->
+<div id="id01" class="modal">
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+    </div>
+  <br>
+    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="clickme">Click me</button>
+    <p id="xmas">&#127876;<p>
+    <span id="intro">This is a virtual Christmas card. Click to see what's inside &#9731;</span>
+    
+  </form>
+</div>
+<!--<script src="validate.js"></script>
+<script src="snow.js"></script>-->
+<!--validate.js-->
+<script>
+function Riddle(){
+  var username = document.getElementById('un').value;
+  var t1 = document.getElementById("i1").value;
+  var t2 = document.getElementById("i2").value;
+  var t3 = document.getElementById("i3").value;
+  var t4 = document.getElementById("i4").value;
+  var t5 = document.getElementById("i5").value;
+  var t6 = document.getElementById("i6").value;
+  var t7 = document.getElementById("i7").value;
+  var t8 = document.getElementById("i8").value;
+  var t9 = document.getElementById("i9").value;
+  var t10 = document.getElementById("i10").value;
+  var t11 = document.getElementById("i11").value;
+  var t12 = document.getElementById("i12").value;
+  var t13 = document.getElementById("i13").value;
+  var t14 = document.getElementById("i14").value;
+//username
+  if(username != ""){
+      var username = document.getElementById('un').value;
+     }
+
+     else{
+       username = document.getElementById('un').innerHTML = "You unknown hobbit";
+     }
+//ltext retains the first letter of the word for comparison
+  var ltext = t1.charAt(0) + t2.charAt(0) + t3.charAt(0) + t4.charAt(0) + t5.charAt(0) + " " 
+  + t6.charAt(0) + t7.charAt(0) + t8.charAt(0) + t9.charAt(0) + t10.charAt(0) + t11.charAt(0) + t12.charAt(0) + t13.charAt(0) + t14.charAt(0);
+//compare the words input vs the letters
+  if(t1.charAt(0) == "m" && t2.charAt(0) == "e" && t3.charAt(0) == "r" && t4.charAt(0) == "r" && t5.charAt(0) == "y" && t6.charAt(0) == "c" && t7.charAt(0) == "h" && t8.charAt(0) == "r" && t9.charAt(0) == "i" && t10.charAt(0) == "s" && t11.charAt(0) == "t" && t12.charAt(0) == "m" && t13.charAt(0) == "a" && t14.charAt(0) == "s"){
+     document.getElementById("demo").innerHTML = ltext.toUpperCase() + " and Happy Holidays" + ", " + username + "!" + "<br>" + "From Mugurel";
+     document.getElementById("demo").style.backgroundColor = "black";
+     document.getElementById("body").style.backgroundColor = "#778899";
+    }
+
+  else{
+     document.getElementById("demo").innerHTML = "Refresh the page and try again, naughty you!" + " Some of the answers you filled in might be correct";
+     document.getElementById("demo").style.backgroundColor = "red";
+     document.getElementById("demo").style.color = "white";
+     document.getElementById("body").style.backgroundColor = "black";
+  }
+}
+
+//onblur to show if the word is correct or wrong.
+function Verify() {
+  var username = document.getElementById('un').value;
+  var t1 = document.getElementById("i1").value;
+  var t2 = document.getElementById("i2").value;
+  var t3 = document.getElementById("i3").value;
+  var t4 = document.getElementById("i4").value;
+  var t5 = document.getElementById("i5").value;
+  var t6 = document.getElementById("i6").value;
+  var t7 = document.getElementById("i7").value;
+  var t8 = document.getElementById("i8").value;
+  var t9 = document.getElementById("i9").value;
+  var t10 = document.getElementById("i10").value;
+  var t11 = document.getElementById("i11").value;
+  var t12 = document.getElementById("i12").value;
+  var t13 = document.getElementById("i13").value;
+  var t14 = document.getElementById("i14").value;
+
+  if (t1.charAt(0) == "m") {
+    document.getElementById("i1").style.color = "lightgreen";
+  } 
+  else{
+    document.getElementById("i1").style.color = "red";
+  }
+  if (t2.charAt(0) == "e") {
+    document.getElementById("i2").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i2").style.color = "red";
+  }
+  if (t3.charAt(0) == "r") {
+    document.getElementById("i3").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i3").style.color = "red";
+  }
+  if (t4.charAt(0) == "r") {
+    document.getElementById("i4").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i4").style.color = "red";
+  }
+  if (t5.charAt(0) == "y") {
+    document.getElementById("i5").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i5").style.color = "red";
+  }
+  if (t6.charAt(0) == "c") {
+    document.getElementById("i6").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i6").style.color = "red";
+  }
+  if (t7.charAt(0) == "h") {
+    document.getElementById("i7").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i7").style.color = "red";
+  }
+  if (t8.charAt(0) == "r") {
+    document.getElementById("i8").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i8").style.color = "red";
+  }
+  if (t9.charAt(0) == "i") {
+    document.getElementById("i9").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i9").style.color = "red";
+  }
+  if (t10.charAt(0) == "s") {
+    document.getElementById("i10").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i10").style.color = "red";
+  }
+  if (t11.charAt(0) == "t") {
+    document.getElementById("i11").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i11").style.color = "red";
+  }
+  if (t12.charAt(0) == "m") {
+    document.getElementById("i12").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i12").style.color = "red";
+  }
+  if (t13.charAt(0) == "a") {
+    document.getElementById("i13").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i13").style.color = "red";
+  }
+  if (t14.charAt(0) == "s") {
+    document.getElementById("i14").style.color = "lightgreen";
+  } 
+  else {
+    document.getElementById("i14").style.color = "red";
+  }
+
+}
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!--snow.js-->
+<script>
+/** @license
+ * DHTML Snowstorm! JavaScript-based snow for web pages
+ * Making it snow on the internets since 2003. You're welcome.
+ * -----------------------------------------------------------
+ * Version 1.44.20131208 (Previous rev: 1.44.20131125)
+ * Copyright (c) 2007, Scott Schiller. All rights reserved.
+ * Code provided under the BSD License
+ * http://schillmania.com/projects/snowstorm/license.txt
+ */
+
+/*jslint nomen: true, plusplus: true, sloppy: true, vars: true, white: true */
+/*global window, document, navigator, clearInterval, setInterval */
+
+var snowStorm = (function(window, document) {
+
+  // --- common properties ---
+
+  this.autoStart = true;          // Whether the snow should start automatically or not.
+  this.excludeMobile = true;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) Enable at your own risk.
+  this.flakesMax = 128;           // Limit total amount of snow made (falling + sticking)
+  this.flakesMaxActive = 64;      // Limit amount of snow falling at once (less = lower CPU use)
+  this.animationInterval = 50;    // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
+  this.useGPU = true;             // Enable transform-based hardware acceleration, reduce CPU load.
+  this.className = null;          // CSS class name for further customization on snow elements
+  this.excludeMobile = true;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
+  this.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
+  this.followMouse = false;        // Snow movement can respond to the user's mouse
+  this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
+  this.snowCharacter = '&bull;';  // &bull; = bullet, &middot; is square on some systems etc.
+  this.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
+  this.targetElement = null;      // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
+  this.useMeltEffect = true;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
+  this.useTwinkleEffect = false;  // Allow snow to randomly "flicker" in and out of view while falling
+  this.usePositionFixed = false;  // true = snow does not shift vertically when scrolling. May increase CPU load, disabled by default - if enabled, used only where supported
+  this.usePixelPosition = false;  // Whether to use pixel values for snow top/left vs. percentages. Auto-enabled if body is position:relative or targetElement is specified.
+
+  // --- less-used bits ---
+
+  this.freezeOnBlur = true;       // Only snow when the window is in focus (foreground.) Saves CPU.
+  this.flakeLeftOffset = 0;       // Left margin/gutter space on edge of container (eg. browser window.) Bump up these values if seeing horizontal scrollbars.
+  this.flakeRightOffset = 0;      // Right margin/gutter space on edge of container
+  this.flakeWidth = 8;            // Max pixel width reserved for snow element
+  this.flakeHeight = 8;           // Max pixel height reserved for snow element
+  this.vMaxX = 5;                 // Maximum X velocity range for snow
+  this.vMaxY = 4;                 // Maximum Y velocity range for snow
+  this.zIndex = 0;                // CSS stacking order applied to each snowflake
+
+  // --- "No user-serviceable parts inside" past this point, yadda yadda ---
+
+  var storm = this,
+  features,
+  // UA sniffing and backCompat rendering mode checks for fixed position, etc.
+  isIE = navigator.userAgent.match(/msie/i),
+  isIE6 = navigator.userAgent.match(/msie 6/i),
+  isMobile = navigator.userAgent.match(/mobile|opera m(ob|in)/i),
+  isBackCompatIE = (isIE && document.compatMode === 'BackCompat'),
+  noFixed = (isBackCompatIE || isIE6),
+  screenX = null, screenX2 = null, screenY = null, scrollY = null, docHeight = null, vRndX = null, vRndY = null,
+  windOffset = 1,
+  windMultiplier = 2,
+  flakeTypes = 6,
+  fixedForEverything = false,
+  targetElementIsRelative = false,
+  opacitySupported = (function(){
+    try {
+      document.createElement('div').style.opacity = '0.5';
+    } catch(e) {
+      return false;
+    }
+    return true;
+  }()),
+  didInit = false,
+  docFrag = document.createDocumentFragment();
+
+  features = (function() {
+
+    var getAnimationFrame;
+
+    /**
+     * hat tip: paul irish
+     * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+     * https://gist.github.com/838785
+     */
+
+    function timeoutShim(callback) {
+      window.setTimeout(callback, 1000/(storm.animationInterval || 20));
+    }
+
+    var _animationFrame = (window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        timeoutShim);
+
+    // apply to window, avoid "illegal invocation" errors in Chrome
+    getAnimationFrame = _animationFrame ? function() {
+      return _animationFrame.apply(window, arguments);
+    } : null;
+
+    var testDiv;
+
+    testDiv = document.createElement('div');
+
+    function has(prop) {
+
+      // test for feature support
+      var result = testDiv.style[prop];
+      return (result !== undefined ? prop : null);
+
+    }
+
+    // note local scope.
+    var localFeatures = {
+
+      transform: {
+        ie:  has('-ms-transform'),
+        moz: has('MozTransform'),
+        opera: has('OTransform'),
+        webkit: has('webkitTransform'),
+        w3: has('transform'),
+        prop: null // the normalized property value
+      },
+
+      getAnimationFrame: getAnimationFrame
+
+    };
+
+    localFeatures.transform.prop = (
+      localFeatures.transform.w3 || 
+      localFeatures.transform.moz ||
+      localFeatures.transform.webkit ||
+      localFeatures.transform.ie ||
+      localFeatures.transform.opera
+    );
+
+    testDiv = null;
+
+    return localFeatures;
+
+  }());
+
+  this.timer = null;
+  this.flakes = [];
+  this.disabled = false;
+  this.active = false;
+  this.meltFrameCount = 20;
+  this.meltFrames = [];
+
+  this.setXY = function(o, x, y) {
+
+    if (!o) {
+      return false;
+    }
+
+    if (storm.usePixelPosition || targetElementIsRelative) {
+
+      o.style.left = (x - storm.flakeWidth) + 'px';
+      o.style.top = (y - storm.flakeHeight) + 'px';
+
+    } else if (noFixed) {
+
+      o.style.right = (100-(x/screenX*100)) + '%';
+      // avoid creating vertical scrollbars
+      o.style.top = (Math.min(y, docHeight-storm.flakeHeight)) + 'px';
+
+    } else {
+
+      if (!storm.flakeBottom) {
+
+        // if not using a fixed bottom coordinate...
+        o.style.right = (100-(x/screenX*100)) + '%';
+        o.style.bottom = (100-(y/screenY*100)) + '%';
+
+      } else {
+
+        // absolute top.
+        o.style.right = (100-(x/screenX*100)) + '%';
+        o.style.top = (Math.min(y, docHeight-storm.flakeHeight)) + 'px';
+
+      }
+
+    }
+
+  };
+
+  this.events = (function() {
+
+    var old = (!window.addEventListener && window.attachEvent), slice = Array.prototype.slice,
+    evt = {
+      add: (old?'attachEvent':'addEventListener'),
+      remove: (old?'detachEvent':'removeEventListener')
+    };
+
+    function getArgs(oArgs) {
+      var args = slice.call(oArgs), len = args.length;
+      if (old) {
+        args[1] = 'on' + args[1]; // prefix
+        if (len > 3) {
+          args.pop(); // no capture
+        }
+      } else if (len === 3) {
+        args.push(false);
+      }
+      return args;
+    }
+
+    function apply(args, sType) {
+      var element = args.shift(),
+          method = [evt[sType]];
+      if (old) {
+        element[method](args[0], args[1]);
+      } else {
+        element[method].apply(element, args);
+      }
+    }
+
+    function addEvent() {
+      apply(getArgs(arguments), 'add');
+    }
+
+    function removeEvent() {
+      apply(getArgs(arguments), 'remove');
+    }
+
+    return {
+      add: addEvent,
+      remove: removeEvent
+    };
+
+  }());
+
+  function rnd(n,min) {
+    if (isNaN(min)) {
+      min = 0;
+    }
+    return (Math.random()*n)+min;
+  }
+
+  function plusMinus(n) {
+    return (parseInt(rnd(2),10)===1?n*-1:n);
+  }
+
+  this.randomizeWind = function() {
+    var i;
+    vRndX = plusMinus(rnd(storm.vMaxX,0.2));
+    vRndY = rnd(storm.vMaxY,0.2);
+    if (this.flakes) {
+      for (i=0; i<this.flakes.length; i++) {
+        if (this.flakes[i].active) {
+          this.flakes[i].setVelocities();
+        }
+      }
+    }
+  };
+
+  this.scrollHandler = function() {
+    var i;
+    // "attach" snowflakes to bottom of window if no absolute bottom value was given
+    scrollY = (storm.flakeBottom ? 0 : parseInt(window.scrollY || document.documentElement.scrollTop || (noFixed ? document.body.scrollTop : 0), 10));
+    if (isNaN(scrollY)) {
+      scrollY = 0; // Netscape 6 scroll fix
+    }
+    if (!fixedForEverything && !storm.flakeBottom && storm.flakes) {
+      for (i=0; i<storm.flakes.length; i++) {
+        if (storm.flakes[i].active === 0) {
+          storm.flakes[i].stick();
+        }
+      }
+    }
+  };
+
+  this.resizeHandler = function() {
+    if (window.innerWidth || window.innerHeight) {
+      screenX = window.innerWidth - 16 - storm.flakeRightOffset;
+      screenY = (storm.flakeBottom || window.innerHeight);
+    } else {
+      screenX = (document.documentElement.clientWidth || document.body.clientWidth || document.body.scrollWidth) - (!isIE ? 8 : 0) - storm.flakeRightOffset;
+      screenY = storm.flakeBottom || document.documentElement.clientHeight || document.body.clientHeight || document.body.scrollHeight;
+    }
+    docHeight = document.body.offsetHeight;
+    screenX2 = parseInt(screenX/2,10);
+  };
+
+  this.resizeHandlerAlt = function() {
+    screenX = storm.targetElement.offsetWidth - storm.flakeRightOffset;
+    screenY = storm.flakeBottom || storm.targetElement.offsetHeight;
+    screenX2 = parseInt(screenX/2,10);
+    docHeight = document.body.offsetHeight;
+  };
+
+  this.freeze = function() {
+    // pause animation
+    if (!storm.disabled) {
+      storm.disabled = 1;
+    } else {
+      return false;
+    }
+    storm.timer = null;
+  };
+
+  this.resume = function() {
+    if (storm.disabled) {
+       storm.disabled = 0;
+    } else {
+      return false;
+    }
+    storm.timerInit();
+  };
+
+  this.toggleSnow = function() {
+    if (!storm.flakes.length) {
+      // first run
+      storm.start();
+    } else {
+      storm.active = !storm.active;
+      if (storm.active) {
+        storm.show();
+        storm.resume();
+      } else {
+        storm.stop();
+        storm.freeze();
+      }
+    }
+  };
+
+  this.stop = function() {
+    var i;
+    this.freeze();
+    for (i=0; i<this.flakes.length; i++) {
+      this.flakes[i].o.style.display = 'none';
+    }
+    storm.events.remove(window,'scroll',storm.scrollHandler);
+    storm.events.remove(window,'resize',storm.resizeHandler);
+    if (storm.freezeOnBlur) {
+      if (isIE) {
+        storm.events.remove(document,'focusout',storm.freeze);
+        storm.events.remove(document,'focusin',storm.resume);
+      } else {
+        storm.events.remove(window,'blur',storm.freeze);
+        storm.events.remove(window,'focus',storm.resume);
+      }
+    }
+  };
+
+  this.show = function() {
+    var i;
+    for (i=0; i<this.flakes.length; i++) {
+      this.flakes[i].o.style.display = 'block';
+    }
+  };
+
+  this.SnowFlake = function(type,x,y) {
+    var s = this;
+    this.type = type;
+    this.x = x||parseInt(rnd(screenX-20),10);
+    this.y = (!isNaN(y)?y:-rnd(screenY)-12);
+    this.vX = null;
+    this.vY = null;
+    this.vAmpTypes = [1,1.2,1.4,1.6,1.8]; // "amplification" for vX/vY (based on flake size/type)
+    this.vAmp = this.vAmpTypes[this.type] || 1;
+    this.melting = false;
+    this.meltFrameCount = storm.meltFrameCount;
+    this.meltFrames = storm.meltFrames;
+    this.meltFrame = 0;
+    this.twinkleFrame = 0;
+    this.active = 1;
+    this.fontSize = (10+(this.type/5)*10);
+    this.o = document.createElement('div');
+    this.o.innerHTML = storm.snowCharacter;
+    if (storm.className) {
+      this.o.setAttribute('class', storm.className);
+    }
+    this.o.style.color = storm.snowColor;
+    this.o.style.position = (fixedForEverything?'fixed':'absolute');
+    if (storm.useGPU && features.transform.prop) {
+      // GPU-accelerated snow.
+      this.o.style[features.transform.prop] = 'translate3d(0px, 0px, 0px)';
+    }
+    this.o.style.width = storm.flakeWidth+'px';
+    this.o.style.height = storm.flakeHeight+'px';
+    this.o.style.fontFamily = 'arial,verdana';
+    this.o.style.cursor = 'default';
+    this.o.style.overflow = 'hidden';
+    this.o.style.fontWeight = 'normal';
+    this.o.style.zIndex = storm.zIndex;
+    docFrag.appendChild(this.o);
+
+    this.refresh = function() {
+      if (isNaN(s.x) || isNaN(s.y)) {
+        // safety check
+        return false;
+      }
+      storm.setXY(s.o, s.x, s.y);
+    };
+
+    this.stick = function() {
+      if (noFixed || (storm.targetElement !== document.documentElement && storm.targetElement !== document.body)) {
+        s.o.style.top = (screenY+scrollY-storm.flakeHeight)+'px';
+      } else if (storm.flakeBottom) {
+        s.o.style.top = storm.flakeBottom+'px';
+      } else {
+        s.o.style.display = 'none';
+        s.o.style.bottom = '0%';
+        s.o.style.position = 'fixed';
+        s.o.style.display = 'block';
+      }
+    };
+
+    this.vCheck = function() {
+      if (s.vX>=0 && s.vX<0.2) {
+        s.vX = 0.2;
+      } else if (s.vX<0 && s.vX>-0.2) {
+        s.vX = -0.2;
+      }
+      if (s.vY>=0 && s.vY<0.2) {
+        s.vY = 0.2;
+      }
+    };
+
+    this.move = function() {
+      var vX = s.vX*windOffset, yDiff;
+      s.x += vX;
+      s.y += (s.vY*s.vAmp);
+      if (s.x >= screenX || screenX-s.x < storm.flakeWidth) { // X-axis scroll check
+        s.x = 0;
+      } else if (vX < 0 && s.x-storm.flakeLeftOffset < -storm.flakeWidth) {
+        s.x = screenX-storm.flakeWidth-1; // flakeWidth;
+      }
+      s.refresh();
+      yDiff = screenY+scrollY-s.y+storm.flakeHeight;
+      if (yDiff<storm.flakeHeight) {
+        s.active = 0;
+        if (storm.snowStick) {
+          s.stick();
+        } else {
+          s.recycle();
+        }
+      } else {
+        if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random()>0.998) {
+          // ~1/1000 chance of melting mid-air, with each frame
+          s.melting = true;
+          s.melt();
+          // only incrementally melt one frame
+          // s.melting = false;
+        }
+        if (storm.useTwinkleEffect) {
+          if (s.twinkleFrame < 0) {
+            if (Math.random() > 0.97) {
+              s.twinkleFrame = parseInt(Math.random() * 8, 10);
+            }
+          } else {
+            s.twinkleFrame--;
+            if (!opacitySupported) {
+              s.o.style.visibility = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 'hidden' : 'visible');
+            } else {
+              s.o.style.opacity = (s.twinkleFrame && s.twinkleFrame % 2 === 0 ? 0 : 1);
+            }
+          }
+        }
+      }
+    };
+
+    this.animate = function() {
+      // main animation loop
+      // move, check status, die etc.
+      s.move();
+    };
+
+    this.setVelocities = function() {
+      s.vX = vRndX+rnd(storm.vMaxX*0.12,0.1);
+      s.vY = vRndY+rnd(storm.vMaxY*0.12,0.1);
+    };
+
+    this.setOpacity = function(o,opacity) {
+      if (!opacitySupported) {
+        return false;
+      }
+      o.style.opacity = opacity;
+    };
+
+    this.melt = function() {
+      if (!storm.useMeltEffect || !s.melting) {
+        s.recycle();
+      } else {
+        if (s.meltFrame < s.meltFrameCount) {
+          s.setOpacity(s.o,s.meltFrames[s.meltFrame]);
+          s.o.style.fontSize = s.fontSize-(s.fontSize*(s.meltFrame/s.meltFrameCount))+'px';
+          s.o.style.lineHeight = storm.flakeHeight+2+(storm.flakeHeight*0.75*(s.meltFrame/s.meltFrameCount))+'px';
+          s.meltFrame++;
+        } else {
+          s.recycle();
+        }
+      }
+    };
+
+    this.recycle = function() {
+      s.o.style.display = 'none';
+      s.o.style.position = (fixedForEverything?'fixed':'absolute');
+      s.o.style.bottom = 'auto';
+      s.setVelocities();
+      s.vCheck();
+      s.meltFrame = 0;
+      s.melting = false;
+      s.setOpacity(s.o,1);
+      s.o.style.padding = '0px';
+      s.o.style.margin = '0px';
+      s.o.style.fontSize = s.fontSize+'px';
+      s.o.style.lineHeight = (storm.flakeHeight+2)+'px';
+      s.o.style.textAlign = 'center';
+      s.o.style.verticalAlign = 'baseline';
+      s.x = parseInt(rnd(screenX-storm.flakeWidth-20),10);
+      s.y = parseInt(rnd(screenY)*-1,10)-storm.flakeHeight;
+      s.refresh();
+      s.o.style.display = 'block';
+      s.active = 1;
+    };
+
+    this.recycle(); // set up x/y coords etc.
+    this.refresh();
+
+  };
+
+  this.snow = function() {
+    var active = 0, flake = null, i, j;
+    for (i=0, j=storm.flakes.length; i<j; i++) {
+      if (storm.flakes[i].active === 1) {
+        storm.flakes[i].move();
+        active++;
+      }
+      if (storm.flakes[i].melting) {
+        storm.flakes[i].melt();
+      }
+    }
+    if (active<storm.flakesMaxActive) {
+      flake = storm.flakes[parseInt(rnd(storm.flakes.length),10)];
+      if (flake.active === 0) {
+        flake.melting = true;
+      }
+    }
+    if (storm.timer) {
+      features.getAnimationFrame(storm.snow);
+    }
+  };
+
+  this.mouseMove = function(e) {
+    if (!storm.followMouse) {
+      return true;
+    }
+    var x = parseInt(e.clientX,10);
+    if (x<screenX2) {
+      windOffset = -windMultiplier+(x/screenX2*windMultiplier);
+    } else {
+      x -= screenX2;
+      windOffset = (x/screenX2)*windMultiplier;
+    }
+  };
+
+  this.createSnow = function(limit,allowInactive) {
+    var i;
+    for (i=0; i<limit; i++) {
+      storm.flakes[storm.flakes.length] = new storm.SnowFlake(parseInt(rnd(flakeTypes),10));
+      if (allowInactive || i>storm.flakesMaxActive) {
+        storm.flakes[storm.flakes.length-1].active = -1;
+      }
+    }
+    storm.targetElement.appendChild(docFrag);
+  };
+
+  this.timerInit = function() {
+    storm.timer = true;
+    storm.snow();
+  };
+
+  this.init = function() {
+    var i;
+    for (i=0; i<storm.meltFrameCount; i++) {
+      storm.meltFrames.push(1-(i/storm.meltFrameCount));
+    }
+    storm.randomizeWind();
+    storm.createSnow(storm.flakesMax); // create initial batch
+    storm.events.add(window,'resize',storm.resizeHandler);
+    storm.events.add(window,'scroll',storm.scrollHandler);
+    if (storm.freezeOnBlur) {
+      if (isIE) {
+        storm.events.add(document,'focusout',storm.freeze);
+        storm.events.add(document,'focusin',storm.resume);
+      } else {
+        storm.events.add(window,'blur',storm.freeze);
+        storm.events.add(window,'focus',storm.resume);
+      }
+    }
+    storm.resizeHandler();
+    storm.scrollHandler();
+    if (storm.followMouse) {
+      storm.events.add(isIE?document:window,'mousemove',storm.mouseMove);
+    }
+    storm.animationInterval = Math.max(20,storm.animationInterval);
+    storm.timerInit();
+  };
+
+  this.start = function(bFromOnLoad) {
+    if (!didInit) {
+      didInit = true;
+    } else if (bFromOnLoad) {
+      // already loaded and running
+      return true;
+    }
+    if (typeof storm.targetElement === 'string') {
+      var targetID = storm.targetElement;
+      storm.targetElement = document.getElementById(targetID);
+      if (!storm.targetElement) {
+        throw new Error('Snowstorm: Unable to get targetElement "'+targetID+'"');
+      }
+    }
+    if (!storm.targetElement) {
+      storm.targetElement = (document.body || document.documentElement);
+    }
+    if (storm.targetElement !== document.documentElement && storm.targetElement !== document.body) {
+      // re-map handler to get element instead of screen dimensions
+      storm.resizeHandler = storm.resizeHandlerAlt;
+      //and force-enable pixel positioning
+      storm.usePixelPosition = true;
+    }
+    storm.resizeHandler(); // get bounding box elements
+    storm.usePositionFixed = (storm.usePositionFixed && !noFixed && !storm.flakeBottom); // whether or not position:fixed is to be used
+    if (window.getComputedStyle) {
+      // attempt to determine if body or user-specified snow parent element is relatlively-positioned.
+      try {
+        targetElementIsRelative = (window.getComputedStyle(storm.targetElement, null).getPropertyValue('position') === 'relative');
+      } catch(e) {
+        // oh well
+        targetElementIsRelative = false;
+      }
+    }
+    fixedForEverything = storm.usePositionFixed;
+    if (screenX && screenY && !storm.disabled) {
+      storm.init();
+      storm.active = true;
+    }
+  };
+
+  function doDelayedStart() {
+    window.setTimeout(function() {
+      storm.start(true);
+    }, 20);
+    // event cleanup
+    storm.events.remove(isIE?document:window,'mousemove',doDelayedStart);
+  }
+
+  function doStart() {
+    if (!storm.excludeMobile || !isMobile) {
+      doDelayedStart();
+    }
+    // event cleanup
+    storm.events.remove(window, 'load', doStart);
+  }
+
+  // hooks for starting the snow
+  if (storm.autoStart) {
+    storm.events.add(window, 'load', doStart, false);
+  }
+
+  return this;
+
+}(window, document));
+
+</script>
+</body>
+</html>
+
+
+
+
